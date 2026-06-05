@@ -86,7 +86,7 @@ export default function InstagramFeed({ lang }) {
           {feedItems.map(item => (
             <a 
               key={item.id}
-              href="https://instagram.com" 
+              href="https://instagram.com/roxana.negut" 
               target="_blank" 
               rel="noopener noreferrer"
               className="instagram-item glass-card"
@@ -130,7 +130,7 @@ export default function InstagramFeed({ lang }) {
         {/* Footer CTA */}
         <div className="instagram-cta-footer">
           <a 
-            href="https://facebook.com/roxana.negut" 
+            href="https://instagram.com/roxana.negut" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-secondary"

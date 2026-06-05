@@ -65,14 +65,14 @@ export default function Footer({ lang, t }) {
           <p className="cinematic-tagline">{footerTagline}</p>
           
           <div className="cinematic-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="cinematic-link-item">
+            <a href="https://instagram.com/roxana.negut" target="_blank" rel="noopener noreferrer" className="cinematic-link-item">
               <Camera size={14} />
               <span>Instagram</span>
             </a>
             <span className="cinematic-divider">•</span>
-            <a href="mailto:contact@roxananegut.com" className="cinematic-link-item">
+            <a href="mailto:negutroxana@yahoo.com" className="cinematic-link-item">
               <Mail size={14} />
-              <span>contact@roxananegut.com</span>
+              <span>negutroxana@yahoo.com</span>
             </a>
           </div>
 

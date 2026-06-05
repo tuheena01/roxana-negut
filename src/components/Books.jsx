@@ -66,7 +66,7 @@ export default function Books({ lang, onOpenSample, t }) {
       },
       amazonLink: 'https://www.amazon.com/s?k=Roxana+Negut+Umbrele+Luminii',
       googlePlayLink: 'https://play.google.com/store/search?q=Roxana%20Negut%20Umbrele%20Luminii&c=books',
-      cover: null,
+      cover: '/pdf_cover_p2.png',
       category: 'poetry',
       gradient: 'linear-gradient(135deg, #1a1817 0%, #12100f 100%)'
     },
@@ -96,7 +96,7 @@ export default function Books({ lang, onOpenSample, t }) {
       },
       amazonLink: 'https://www.amazon.com/s?k=Roxana+Negut+Teoria+Haosului',
       googlePlayLink: 'https://play.google.com/store/search?q=Roxana%20Negut%20Teoria%20Haosului&c=books',
-      cover: null,
+      cover: '/pdf_cover_p3.png',
       category: 'poetry',
       gradient: 'linear-gradient(135deg, #1a1817 0%, #12100f 100%)'
     },
@@ -126,7 +126,7 @@ export default function Books({ lang, onOpenSample, t }) {
       },
       amazonLink: 'https://www.amazon.com/s?k=Roxana+Negut+Mortii+nu+vor+apa',
       googlePlayLink: 'https://play.google.com/store/search?q=Roxana%20Negut%20Mortii%20nu%20vor%20apa&c=books',
-      cover: null,
+      cover: '/pdf_cover_p4.png',
       category: 'poetry',
       gradient: 'linear-gradient(135deg, #1a1817 0%, #12100f 100%)'
     }

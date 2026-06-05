@@ -35,7 +35,7 @@ export default function Hero({ t }) {
         {/* Left Content column */}
         <div className="hero-content">
           <div className="hero-badge animate-fade-in">
-            <span>Roxana Neguț Portfolio</span>
+            <span>{isEn ? 'Award-Winning International Author' : 'Autor Internațional Premiat'}</span>
           </div>
           
           <h1 className="hero-title animate-slide-up">

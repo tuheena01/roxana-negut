@@ -1,32 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:wght@300..700&display=swap');
 
 :root {
   /* Default Theme: Premium Matte Black & Gold */
-  --bg-dark: #0c0b0a; /* Rich Obsidian Black */
-  --bg-card: rgba(26, 24, 23, 0.75);
-  --bg-card-hover: rgba(36, 33, 31, 0.9);
-  --border-glow: rgba(201, 168, 106, 0.15);
-  --border-glow-hover: rgba(229, 197, 131, 0.35);
+  --bg-dark: #0a0908; /* Rich Obsidian Black */
+  --bg-card: rgba(18, 16, 15, 0.7); /* Dark Charcoal Card */
+  --bg-card-hover: rgba(26, 23, 21, 0.9);
+  --border-glow: rgba(212, 175, 55, 0.1); /* Gold glow border */
+  --border-glow-hover: rgba(212, 175, 55, 0.3);
   
-  --text-primary: #f5f2ee; /* Soft Warm White */
-  --text-secondary: #d4ceb8; /* Muted Champagne */
-  --text-muted: #8a817c; /* Muted Taupe */
+  --text-primary: #faf9f6; /* Alabaster White */
+  --text-secondary: #e5dcc6; /* Pearl Cream Champagne */
+  --text-muted: #9a9187; /* Warm Muted Bronze */
   
-  --accent-gold: #d4b885; /* Muted Gold */
-  --accent-violet: #d4ceb8;
-  --accent-rose: #8a817c;
+  --accent-gold: #d4af37; /* Metallic Liquid Gold */
+  --accent-violet: #e5dcc6;
+  --accent-rose: #9a9187;
   
-  --gradient-primary: linear-gradient(135deg, #d4b885 0%, #c9a86a 50%, #8a817c 100%);
-  --gradient-gold: linear-gradient(135deg, #e5c583 0%, #d4b885 100%);
-  --gradient-dark: linear-gradient(180deg, #1f1c1a 0%, #0c0b0a 100%);
+  --gradient-primary: linear-gradient(135deg, #d4af37 0%, #aa7c11 50%, #8e8379 100%);
+  --gradient-gold: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+  --gradient-dark: linear-gradient(180deg, #181716 0%, #0a0908 100%);
   
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
-  --nav-bg: rgba(255, 255, 255, 0.03);
-  --nav-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.55);
+  --nav-bg: rgba(255, 255, 255, 0.02);
+  --nav-border: rgba(255, 255, 255, 0.04);
 
   /* Fonts */
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
   
   /* Transitions */
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -35,27 +35,27 @@
 
 /* Secondary Theme: Warm Cream Luxury */
 [data-theme="light"] {
-  --bg-dark: #faf8f5; /* Premium Warm Cream */
-  --bg-card: rgba(255, 255, 255, 0.75);
-  --bg-card-hover: rgba(255, 255, 255, 0.98);
-  --border-glow: rgba(201, 168, 106, 0.22);
-  --border-glow-hover: rgba(91, 75, 66, 0.38);
+  --bg-dark: #fcfbf9; /* Soft Milk-White Paper */
+  --bg-card: rgba(247, 245, 240, 0.85); /* Warm Beige Card */
+  --bg-card-hover: #f2efe9;
+  --border-glow: rgba(170, 124, 17, 0.15);
+  --border-glow-hover: rgba(170, 124, 17, 0.35);
   
-  --text-primary: #1a1a1a; /* Obsidian Charcoal */
-  --text-secondary: #5b4b42; /* Earthy Espresso */
-  --text-muted: #8c7c72; /* Warm Taupe */
+  --text-primary: #181716; /* Obsidian Charcoal */
+  --text-secondary: #5c534c; /* Deep Cocoa/Bronze */
+  --text-muted: #8e8379; /* Warm Muted Gray */
   
-  --accent-gold: #c9a86a; /* Luxury Muted Gold */
-  --accent-violet: #5b4b42;
-  --accent-rose: #8c7c72;
+  --accent-gold: #aa7c11; /* Vintage Deep Gold */
+  --accent-violet: #5c534c;
+  --accent-rose: #8e8379;
   
-  --gradient-primary: linear-gradient(135deg, #c9a86a 0%, #8c7c72 50%, #5b4b42 100%);
-  --gradient-gold: linear-gradient(135deg, #e5c583 0%, #c9a86a 100%);
-  --gradient-dark: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+  --gradient-primary: linear-gradient(135deg, #aa7c11 0%, #8e8379 50%, #5c534c 100%);
+  --gradient-gold: linear-gradient(135deg, #f3e5ab 0%, #aa7c11 100%);
+  --gradient-dark: linear-gradient(180deg, #ffffff 0%, #fcfbf9 100%);
   
-  --glass-shadow: 0 8px 32px 0 rgba(91, 75, 66, 0.08);
-  --nav-bg: rgba(91, 75, 66, 0.03);
-  --nav-border: rgba(91, 75, 66, 0.06);
+  --glass-shadow: 0 8px 32px 0 rgba(92, 83, 76, 0.06);
+  --nav-bg: rgba(92, 83, 76, 0.02);
+  --nav-border: rgba(92, 83, 76, 0.05);
 }
 
 * {
@@ -721,6 +721,7 @@ a {
   border: 1px solid rgba(201, 168, 106, 0.2);
   margin: 0 auto;
   z-index: 1;
+  overflow: hidden;
 }
 
 .featured-sparkle-glow {

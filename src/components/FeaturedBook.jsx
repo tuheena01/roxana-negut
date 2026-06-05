@@ -35,16 +35,13 @@ export default function FeaturedBook({ lang, onOpenSample, t }) {
 
         <div className="featured-book-grid glass-card">
           
-          {/* Cover Section (Custom Matte Black & Gold Design) */}
+          {/* Cover Section (Original Cover Image) */}
           <div className="featured-cover-wrapper">
-            <div className="book-cover-placeholder custom-featured-cover">
-              <div className="placeholder-pattern"></div>
-              <div className="placeholder-content">
-                <span className="placeholder-genre">{bookGenre}</span>
-                <h4 className="placeholder-title">{bookTitle}</h4>
-                <span className="placeholder-author">Roxana Neguț</span>
-              </div>
-            </div>
+            <img 
+              src="/pdf_cover_p1.png" 
+              alt={bookTitle} 
+              className="book-cover-img" 
+            />
             
             <div className="featured-sparkle-glow">
               <Sparkles size={22} className="sparkle-gold animate-pulse" />
