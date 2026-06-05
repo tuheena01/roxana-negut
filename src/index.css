@@ -2457,6 +2457,206 @@ a {
   }
 }
 
+/* ================= INTERVIEW / Q&A SECTION ================= */
+.interview-section {
+  position: relative;
+  background: var(--gradient-dark);
+}
+
+.interview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  align-items: flex-start;
+  margin-top: 3rem;
+}
+
+.interview-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.interview-image-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: 24px;
+  padding: 3.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.decor-glow {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+  z-index: 1;
+}
+
+.decor-large-text {
+  font-family: var(--font-serif);
+  font-size: 9rem;
+  line-height: 1;
+  position: absolute;
+  top: -1.5rem;
+  left: 1rem;
+  color: var(--accent-gold);
+  opacity: 0.08;
+  pointer-events: none;
+  font-weight: 800;
+}
+
+.interview-quote-excerpt {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.interview-signature {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  text-align: right;
+  position: relative;
+  z-index: 2;
+}
+
+.interview-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.accordion-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  box-shadow: var(--glass-shadow);
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1.8rem;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
+}
+
+.accordion-header:hover {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.accordion-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.accordion-title-wrapper h4 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.q-icon {
+  color: var(--accent-gold);
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.accordion-icon-toggle {
+  color: var(--text-muted);
+  transition: color 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.accordion-item.open {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.06);
+}
+
+.accordion-item.open .accordion-header {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  background: rgba(212, 175, 55, 0.02);
+}
+
+.accordion-item.open .accordion-icon-toggle {
+  color: var(--accent-gold);
+}
+
+.accordion-collapse {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.accordion-collapse.show {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.accordion-body {
+  padding: 1.8rem;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.accordion-body p {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+[data-theme="light"] .accordion-body {
+  background: rgba(92, 83, 76, 0.03);
+}
+
+@media (max-width: 800px) {
+  .interview-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .interview-image-card {
+    padding: 2.5rem;
+    min-height: auto;
+  }
+}
+
 /* ================= SCROLL REVEAL EFFECTS ================= */
 .reveal {
   opacity: 0;
