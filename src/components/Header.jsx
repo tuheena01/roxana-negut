@@ -10,7 +10,7 @@ export default function Header({ lang, setLang, theme, setTheme, t }) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'about', 'books', 'reviews', 'interview', 'limonada'];
+      const sections = ['home', 'about', 'books', 'reviews', 'media', 'contact'];
       const current = sections.find(section => {
         const el = document.getElementById(section);
         if (el) {
@@ -31,8 +31,8 @@ export default function Header({ lang, setLang, theme, setTheme, t }) {
     { id: 'about', label: t.nav.about, icon: <User size={16} /> },
     { id: 'books', label: t.nav.books, icon: <BookOpen size={16} /> },
     { id: 'reviews', label: t.nav.reviews, icon: <MessageSquare size={16} /> },
-    { id: 'interview', label: t.nav.interview, icon: <HelpCircle size={16} /> },
-    { id: 'limonada', label: t.nav.limonada, icon: <Smile size={16} /> }
+    { id: 'media', label: lang === 'en' ? 'Media' : 'Media', icon: <Smile size={16} /> },
+    { id: 'contact', label: lang === 'en' ? 'Contact' : 'Contact', icon: <Globe size={16} /> }
   ];
 
   const handleLinkClick = (id) => {

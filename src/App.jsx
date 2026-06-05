@@ -5,8 +5,7 @@ import FeaturedBook from './components/FeaturedBook';
 import About from './components/About';
 import Books from './components/Books';
 import Reviews from './components/Reviews';
-import LimonadaPoetica from './components/LimonadaPoetica';
-import InstagramFeed from './components/InstagramFeed';
+import MediaSection from './components/MediaSection';
 import Footer from './components/Footer';
 import SampleModal from './components/SampleModal';
 
@@ -17,14 +16,14 @@ const translations = {
       about: 'About',
       books: 'Books',
       reviews: 'Reviews',
-      interview: 'Interview', // Accordion interview will live inside About / detail sections, navigation has been simplified for luxury flow
-      limonada: 'Poetic Lemonade'
+      media: 'Media',
+      contact: 'Contact'
     },
     hero: {
       title: 'Roxana Neguț',
-      subtitle: 'Poet • Writer • Journalist',
-      cta_books: 'Explore Books',
-      cta_contact: 'Connect With Me',
+      subtitle: 'Author • Poet • Storyteller',
+      cta_books: 'Explore My Books',
+      cta_contact: 'Follow on Instagram',
       quote: 'Writing is the bridge that connects the woman, the old woman, and the child residing inside my soul.'
     },
     about: {
@@ -37,7 +36,7 @@ const translations = {
       award_3: 'Awarded the "Premiul Prieteniei" (Friendship Award) in 2020 for her fairy tales.'
     },
     books: {
-      title: 'The Poetry Collection',
+      title: 'Published Works',
       subtitle: 'Explore Roxana\'s other published poetry collections, exploring spiritual stages of femininity.',
       read_on_amazon: 'Buy on Amazon',
       read_on_google: 'Google Play Books',
@@ -50,10 +49,6 @@ const translations = {
     reviews: {
       title: 'Reader & Critic Reviews',
       subtitle: 'What literary critics and readers say about her books.'
-    },
-    interview: {
-      title: 'Author Interviews',
-      subtitle: 'Behind the scenes of her writing process, inspiration, and philosophy.'
     },
     limonada: {
       title: 'Limonada Poetică',
@@ -76,12 +71,12 @@ const translations = {
       about: 'Despre',
       books: 'Cărți',
       reviews: 'Recenzii',
-      interview: 'Interviu',
-      limonada: 'Limonadă Poetică'
+      media: 'Media',
+      contact: 'Contact'
     },
     hero: {
       title: 'Roxana Neguț',
-      subtitle: 'Poetă • Scriitoare • Jurnalistă',
+      subtitle: 'Autor • Poet • Povestitor',
       cta_books: 'Explorează Cărțile',
       cta_contact: 'Contactează-mă',
       quote: 'Scrisul este puntea care leagă femeia, bătrâna și copilul care locuiesc în sufletul meu.'
@@ -91,12 +86,12 @@ const translations = {
       bio_1: 'Roxana Neguț (născută în 1981 la București) este o poetă, scriitoare de literatură pentru copii și jurnalistă română. Având studii de Filosofie și Jurnalism, și-a petrecut decenii îmbinând profunzimea filosofică cu grația literară.',
       bio_2: 'Portofoliul ei literar acoperă mai multe genuri – de la poezie spirituală profundă și proză scurtă până la basme fermecătoare pentru copii. Pe lângă volumele sale independente, creațiile sale au fost incluse în numeroase antologii naționale și internaționale de prestigiu din SUA, Marea Britanie, India și Argentina.',
       awards_title: 'Recunoaștere și Distincții',
-      award_1: 'Desemnată Ambasador Literar în România pentru Fundația Cesar Egido Serrano (Spania) in 2018, și „Ambasador al Cuvântului” în 2019 și 2020.',
+      award_1: 'Desemnată Ambasador Literar în România pentru Fundația Cesar Egido Serrano (Spania) în 2018, și „Ambasador al Cuvântului” în 2019 și 2020.',
       award_2: 'Câștigătoare a „Iconic Author Award 2023” acordat de Maybeify Publisher (India) pentru volumul de poezii „The Woman, The Old Woman, The Child”.',
       award_3: 'Distinsă cu „Premiul Prieteniei” în 2020 pentru poveștile sale.'
     },
     books: {
-      title: 'Colecții de Poezie',
+      title: 'Volume Publicate',
       subtitle: 'Explorează celelalte volume de poezie ale Roxanei Neguț, pline de profunzime filosofică.',
       read_on_amazon: 'Cumpără de pe Amazon',
       read_on_google: 'Google Play Books',
@@ -109,10 +104,6 @@ const translations = {
     reviews: {
       title: 'Recenzii și Opinii',
       subtitle: 'Ce spun criticii literari și cititorii despre cărțile sale.'
-    },
-    interview: {
-      title: 'Interviuri cu Autoarea',
-      subtitle: 'Culisele procesului de creație, inspirației și filosofiei sale.'
     },
     limonada: {
       title: 'Limonada Poetică',
@@ -137,10 +128,10 @@ function App() {
     return saved === 'ro' ? 'ro' : 'en';
   });
 
-  // Default to Light mode to present the premium warm cream editorial theme first
+  // Default theme is now dark (premium matte black and gold)
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('roxana_theme');
-    return saved ? saved : 'light';
+    return saved ? saved : 'dark';
   });
 
   // Sample Modal state
@@ -175,26 +166,23 @@ function App() {
       <main className="main-content-flow">
         <Hero t={t} />
         
-        {/* Featured Book Showcase (Immediate bestseller banner below Hero) */}
+        {/* Featured Book Showcase */}
         <FeaturedBook lang={lang} onOpenSample={handleOpenSample} t={t} />
         
         <About t={t} />
         
-        {/* Books grid (Remaining books collection) */}
+        {/* Books grid */}
         <Books lang={lang} onOpenSample={handleOpenSample} t={t} />
         
         <Reviews lang={lang} t={t} />
         
-        {/* Poetic Lemonade Interactive generator */}
-        <LimonadaPoetica lang={lang} t={t} />
-        
-        {/* Instagram Grid Feed Mockup */}
-        <InstagramFeed lang={lang} />
+        {/* Media & Interactive Section (Limonada + Instagram) */}
+        <MediaSection lang={lang} t={t} />
       </main>
       
       <Footer lang={lang} t={t} />
       
-      {/* Sample reading excerpt overlay modal */}
+      {/* Excerpt Modal overlay */}
       <SampleModal 
         isOpen={modalOpen} 
         onClose={handleCloseSample} 

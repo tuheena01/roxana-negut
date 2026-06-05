@@ -3,27 +3,24 @@ import { ShoppingBag, BookOpen, Star, Sparkles } from 'lucide-react';
 
 export default function FeaturedBook({ lang, onOpenSample, t }) {
   
-  const bookTitle = lang === 'en' 
-    ? 'The Fantastic Land of Never-Ending Stories' 
-    : 'Fantasticul tărâm al poveștilor fără sfârșit';
-    
-  const bookGenre = lang === 'en' ? "Children's Fantasy" : 'Literatură pentru copii';
+  const bookTitle = 'The Woman, The Old Woman, The Child';
+  const bookGenre = lang === 'en' ? 'Spiritual Poetry & Prose' : 'Poezie Spirituală & Proză';
   
   const bookDesc = lang === 'en'
-    ? 'A magical story featuring dragons, elves, wizards, and floating castles, inviting children and adults alike to discover a world of endless dreams and adventures.'
-    : 'O poveste magică cu dragoni, elfi, vrăjitori și castele plutitoare, invitând copiii și adulții deopotrivă să descopere o lume a viselor și a poveștilor fără sfârșit.';
+    ? 'A profound collection of spiritual poetry exploring the sacred stages of femininity, inner healing, and the light and shadows that exist within the self. Awarded the Iconic Author Award 2023.'
+    : 'O colecție profundă de poezie spirituală ce explorează stadiile sacre ale feminității, vindecarea interioară și alternanța dintre lumină și umbră în interiorul sinelui. Premiată cu Iconic Author Award 2023.';
 
   const bookSampleText = lang === 'en'
-    ? `Once upon a time, in a corner of the universe hidden behind the thickest clouds, lay the Silver Forest. It was a place where trees whispered secrets in the wind and the rivers ran with liquid sapphire. At the heart of the forest stood the floating castle of Lumina, held aloft by the dreams of children.
+    ? `There is a girl sitting on the steps of my childhood home, playing with pebbles of light. She does not know of the storms that lie ahead, nor does she care. She is whole.
     
-    Aria, a young seeker of stories, walked along the cobblestone path. Beside her stood the ancient wizard Alistair, his cloak shimmering like a star-filled sky. "Look ahead, child," Alistair whispered, pointing his staff towards the golden spires in the distance. "For the dragons of the sunset are returning."
+    Behind her, in the doorway, stands the woman. Her hands are scarred from holding onto ropes of fire, her heart heavy but unbroken. She looks at the child with a mixture of grief and love. "Play well, little one," she whispers. "For I am building the shield."
     
-    A soft roar echoed from the horizon, and a crimson dragon swept across the violet sky, leaving a trail of gold dust that fell upon the silver leaves below. Aria held her breath. She knew that her adventure had just begun, and the stories here would never, ever end.`
-    : `A fost odată ca niciodată, într-un colț de univers ascuns în spatele celor mai groși nori, o pădure argintie numită Pădurea de Argint. Era un loc în care copacii își șopteau secrete în vânt, iar râurile curgeau cu safir lichid. În inima pădurii se înălța castelul plutitor al Luminii, susținut de visurile copiilor.
+    And in the rocking chair by the window sits the old woman. She carries the silver of moonbeams in her hair. She smiles, watching them both, knowing that the child, the woman, and the old woman are but a single thread woven into the fabric of eternity.`
+    : `Există o copilă care stă pe treptele casei mele părintești, jucându-se cu pietricele de lumină. Nu știe de furtunile ce vor urma, și nici nu-i pasă. Este întreagă.
     
-    Aria, o tânără căutătoare de povești, mergea pe poteca de piatră. Lângă ea stătea bătrânul vrăjitor Alistair, cu mantia strălucind ca un cer plin de stele. „Privește înainte, copilă,” a șoptit Alistair, îndreptându-și toiagul spre turlele aurii din depărtare. „Căci dragonii apusului se întorc.”
+    În spatele ei, în pragul ușii, stă femeia. Mâinile îi sunt arse de la frânghii de foc, iar inima îi e grea, dar neînfrântă. O privește pe copilă cu un amestec de tristețe și iubire. „Joacă-te bine, micuțo,” șoptește ea. „Căci eu îți clădesc scutul.”
     
-    Un răget blând a răsunat de la orizont, iar un dragon stacojiu a brăzdat cerul violet, lăsând în urmă o trenă de praf de aur care cădea pe frunzele argintii. Aria și-a ținut respirația. Știa că aventura ei abia începuse, iar poveștile de aici nu se vor sfârși niciodată.`;
+    Iar în balansoarul de lângă fereastră stă bătrâna. Poartă argintul razelor de lună în păr. Zâmbește, privindu-le pe amândouă, știind că copila, femeia și bătrâna nu sunt decât un singur fir țesut în pânza eternității.`;
 
   return (
     <section id="featured-book" className="section featured-book-section">
@@ -32,22 +29,30 @@ export default function FeaturedBook({ lang, onOpenSample, t }) {
         <div className="featured-badge-wrapper animate-fade-in">
           <div className="section-badge">
             <Star size={14} fill="currentColor" />
-            <span>{lang === 'en' ? 'Featured Bestseller' : 'Bestseller Recomandat'}</span>
+            <span>{lang === 'en' ? 'Featured Masterpiece' : 'Capodoperă Recomandată'}</span>
           </div>
         </div>
 
         <div className="featured-book-grid glass-card">
           
-          {/* Cover Section */}
+          {/* Cover Section (Custom Matte Black & Gold Design) */}
           <div className="featured-cover-wrapper">
-            <div className="featured-cover-shadow"></div>
-            <img 
-              src="/fantastic_land_cover.jpg" 
-              alt={bookTitle} 
-              className="featured-cover-img" 
-            />
+            <div className="book-cover-placeholder custom-featured-cover">
+              <div className="placeholder-pattern"></div>
+              <div className="placeholder-content">
+                <span className="placeholder-genre">{bookGenre}</span>
+                <h4 className="placeholder-title">{bookTitle}</h4>
+                <span className="placeholder-author">Roxana Neguț</span>
+              </div>
+            </div>
+            
             <div className="featured-sparkle-glow">
-              <Sparkles size={24} className="sparkle-gold animate-pulse" />
+              <Sparkles size={22} className="sparkle-gold animate-pulse" />
+            </div>
+            
+            <div className="featured-book-card-badge">
+              <Star size={11} fill="currentColor" />
+              <span>Iconic Author</span>
             </div>
           </div>
 
@@ -57,16 +62,16 @@ export default function FeaturedBook({ lang, onOpenSample, t }) {
             <h2 className="featured-book-title text-gradient-gold">{bookTitle}</h2>
             
             <div className="featured-meta">
-              <span>{lang === 'en' ? 'Published' : 'An apariție'}: <strong>2020</strong></span>
+              <span>{lang === 'en' ? 'Published' : 'An apariție'}: <strong>2023</strong></span>
               <span className="meta-dot"></span>
-              <span>Editura Lumen / Amazon KDP</span>
+              <span>Maybeify Publishing, India</span>
             </div>
 
             <p className="featured-description">{bookDesc}</p>
 
             <div className="featured-ctas">
               <a 
-                href="https://www.amazon.com/s?k=Roxana+Negut+The+Fantastic+Land+of+Never-Ending+Stories" 
+                href="https://www.amazon.com/s?k=Roxana+Negut+The+Woman+The+Old+Woman+The+Child" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary"

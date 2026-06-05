@@ -3,8 +3,6 @@ import { Mail, Send, Heart, Camera } from 'lucide-react';
 
 export default function Footer({ lang, t }) {
   const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubscribe = (e) => {
@@ -19,7 +17,7 @@ export default function Footer({ lang, t }) {
 
   const year = new Date().getFullYear();
   
-  const footerTagline = lang === 'en' ? 'Stories. Words. Emotions.' : 'Povești. Cuvinte. Emoții.';
+  const footerTagline = lang === 'en' ? 'Author • Poet • Storyteller' : 'Autor • Poet • Povestitor';
   const signupTitle = lang === 'en' ? "Join Roxana's Reader Circle" : 'Alătură-te cercului de cititori';
   const signupSubtitle = lang === 'en' 
     ? 'Get monthly literary reflections, book releases, and exclusive excerpts.'
@@ -29,7 +27,7 @@ export default function Footer({ lang, t }) {
     <footer id="contact" className="footer-section">
       <div className="container footer-container">
         
-        {/* Newsletter Signup (Before the minimal baseline) */}
+        {/* Newsletter Signup */}
         <div className="newsletter-box glass-card">
           <div className="newsletter-info">
             <h3 className="newsletter-title">{signupTitle}</h3>

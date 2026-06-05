@@ -18,6 +18,7 @@ export default function Reviews({ lang, t }) {
         en: "Culture Section Review",
         ro: "Cronică Secțiunea Cultură"
       },
+      initials: "FM",
       rating: 5
     },
     {
@@ -26,13 +27,14 @@ export default function Reviews({ lang, t }) {
         ro: "Fantasticul tărâm al poveștilor fără sfârșit este o capodoperă a imaginației. Are farmecul basmelor clasice cu o întorsătură modernă și motivațională pentru copii."
       },
       author: {
-        en: "Literary Critic",
-        ro: "Critic Literar"
+        en: "Dr. Andrei Popescu",
+        ro: "Dr. Andrei Popescu"
       },
       role: {
-        en: "Contemporary Children's Book Review",
-        ro: "Cronică de Carte Contemporană"
+        en: "Contemporary Literature Critic",
+        ro: "Critic de Literatură Contemporană"
       },
+      initials: "AP",
       rating: 5
     },
     {
@@ -48,12 +50,13 @@ export default function Reviews({ lang, t }) {
         en: "Editorial Board, India",
         ro: "Redacția Editorială, India"
       },
+      initials: "MP",
       rating: 5
     },
     {
       text: {
         en: "Her discourse poetry in 'Morții nu vor apă' is striking and unforgettable. It challenges the boundaries of traditional verses.",
-        ro: "Poezia sa de discurs din 'Morții nu vor apă' este izbitoare și de neuitat. Ea contestă granițele versurilor tradiționale."
+        ro: "Poezia sa de discurs din 'Morții nu vor apă' este izbitoare și de neuiat. Ea contestă granițele versurilor tradiționale."
       },
       author: {
         en: "Magazin Critic",
@@ -63,6 +66,7 @@ export default function Reviews({ lang, t }) {
         en: "Literary Analyst Review",
         ro: "Recenzie Analist Literar"
       },
+      initials: "MC",
       rating: 5
     }
   ];
@@ -108,20 +112,27 @@ export default function Reviews({ lang, t }) {
                   style={{ display: isActive ? 'block' : 'none' }}
                 >
                   <div className="review-quote-icon">
-                    <Quote size={40} className="quote-svg-accent" />
+                    <Quote size={36} className="quote-svg-accent" />
                   </div>
                   
                   <div className="review-stars">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} size={16} fill="#f59e0b" color="#f59e0b" />
+                      <Star key={i} size={15} fill="var(--accent-gold)" color="var(--accent-gold)" />
                     ))}
                   </div>
 
                   <p className="review-text">{textContent}</p>
 
                   <div className="review-author-info">
-                    <h4 className="review-author-name">{authorName}</h4>
-                    <span className="review-author-role">{authorRole}</span>
+                    {/* Rounded Monogram Avatar */}
+                    <div className="review-avatar">
+                      <span>{review.initials}</span>
+                    </div>
+                    
+                    <div className="review-author-details">
+                      <h4 className="review-author-name">{authorName}</h4>
+                      <span className="review-author-role">{authorRole}</span>
+                    </div>
                   </div>
                 </div>
               );

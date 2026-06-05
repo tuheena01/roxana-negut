@@ -1,20 +1,26 @@
 import React from 'react';
-import { ArrowRight, BookOpen, Camera } from 'lucide-react';
+import { ArrowRight, BookOpen, Camera, Award, Sparkles, BookOpenCheck } from 'lucide-react';
 
 export default function Hero({ t }) {
   // Direct translation overrides to meet the design audit exactly
   const taglines = {
     en: {
-      subtitle: 'Author • Storyteller • Dream Weaver',
-      accent: 'Stories that stay with you long after the last page.',
+      subtitle: 'Author • Poet • Storyteller',
+      accent: 'Writing for hearts that seek beauty, meaning, and truth.',
       cta_books: 'Explore My Books',
-      cta_insta: 'Follow on Instagram'
+      cta_insta: 'Follow on Instagram',
+      stat_books: '5+ Published Volumes',
+      stat_readers: 'Readers Worldwide',
+      stat_award: 'Iconic Author Award'
     },
     ro: {
-      subtitle: 'Autor • Povestitor • Urzitor de Visuri',
-      accent: 'Povești care rămân în suflet mult timp după ultima pagină.',
+      subtitle: 'Autor • Poet • Povestitor',
+      accent: 'Scriind pentru inimi care caută frumosul, sensul și adevărul.',
       cta_books: 'Explorează Cărțile',
-      cta_insta: 'Urmărește pe Instagram'
+      cta_insta: 'Urmărește pe Instagram',
+      stat_books: '5+ Volume Publicate',
+      stat_readers: 'Cititori în întreaga lume',
+      stat_award: 'Iconic Author Award'
     }
   };
 
@@ -56,6 +62,24 @@ export default function Hero({ t }) {
               <Camera size={18} />
               <span>{localT.cta_insta}</span>
             </a>
+          </div>
+
+          {/* Social Proof Row */}
+          <div className="hero-social-proof animate-fade-in-slow">
+            <div className="proof-item">
+              <BookOpenCheck size={18} className="proof-icon" />
+              <span>{localT.stat_books}</span>
+            </div>
+            <div className="proof-dot"></div>
+            <div className="proof-item">
+              <Sparkles size={18} className="proof-icon" />
+              <span>{localT.stat_readers}</span>
+            </div>
+            <div className="proof-dot"></div>
+            <div className="proof-item">
+              <Award size={18} className="proof-icon" />
+              <span>{localT.stat_award}</span>
+            </div>
           </div>
         </div>
 
