@@ -173,7 +173,7 @@ export default function Books({ lang, onOpenSample, t }) {
 
         {/* Books Grid */}
         <div className="books-grid">
-          {filteredBooks.map((book) => {
+          {filteredBooks.map((book, index) => {
             const isExpanded = expandedBook === book.id;
             const bookTitle = book.title[lang];
             const bookDesc = book.description[lang];
@@ -181,7 +181,7 @@ export default function Books({ lang, onOpenSample, t }) {
             const excerpt = book.sampleText[lang];
 
             return (
-              <div key={book.id} className={`book-card glass-card ${isExpanded ? 'expanded' : ''}`}>
+              <div key={book.id} className={`book-card glass-card reveal-slide-up reveal-delay-${index + 1} ${isExpanded ? 'expanded' : ''}`}>
                 
                 {/* Book Cover Visual */}
                 <div className="book-cover-container">

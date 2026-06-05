@@ -33,7 +33,7 @@ export default function FeaturedBook({ lang, onOpenSample, t }) {
           </div>
         </div>
 
-        <div className="featured-book-grid glass-card">
+        <div className="featured-book-grid glass-card reveal-slide-up">
           
           {/* Cover Section (Custom Matte Black & Gold Design) */}
           <div className="featured-cover-wrapper">

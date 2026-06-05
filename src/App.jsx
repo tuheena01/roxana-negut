@@ -158,6 +158,30 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  // Scroll Reveal Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      },
+      {
+        threshold: 0.05,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    const revealElements = document.querySelectorAll('.reveal, .reveal-slide-up, .reveal-fade-in');
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      revealElements.forEach((el) => observer.disconnect());
+    };
+  }, [lang]);
+
   const handleOpenSample = (title, text) => {
     setModalTitle(title);
     setModalText(text);

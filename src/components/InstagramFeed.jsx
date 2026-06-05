@@ -83,13 +83,13 @@ export default function InstagramFeed({ lang }) {
 
         {/* Instagram Grid */}
         <div className="instagram-grid">
-          {feedItems.map(item => (
+          {feedItems.map((item, index) => (
             <a 
               key={item.id}
               href="https://instagram.com/roxana.negut" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="instagram-item glass-card"
+              className={`instagram-item glass-card reveal-slide-up reveal-delay-${(index % 3) + 1}`}
             >
               
               {/* Card Content */}

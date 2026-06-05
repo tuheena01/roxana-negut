@@ -134,7 +134,7 @@ export default function Timeline({ lang, t }) {
           <div className="timeline-grid-layout">
             
             {/* Timeline Left: Year selector nodes */}
-            <div className="timeline-nodes-list">
+            <div className="timeline-nodes-list reveal">
               {milestones.map((milestone) => {
                 const isActive = activeId === milestone.id;
                 return (
@@ -155,7 +155,7 @@ export default function Timeline({ lang, t }) {
             </div>
 
             {/* Timeline Right: Detailed card display */}
-            <div className="timeline-detail-display">
+            <div className="timeline-detail-display reveal-slide-up">
               {milestones.map((milestone) => {
                 const isActive = activeId === milestone.id;
                 if (!isActive) return null;

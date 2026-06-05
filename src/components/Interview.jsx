@@ -64,7 +64,7 @@ export default function Interview({ lang, t }) {
             <h2 className="section-title text-gradient">{t.interview.title}</h2>
             <p className="section-subtitle">{t.interview.subtitle}</p>
             
-            <div className="interview-image-card glass-card">
+            <div className="interview-image-card glass-card reveal">
               <div className="decor-glow"></div>
               <p className="decor-large-text">“</p>
               <p className="interview-quote-excerpt">
@@ -87,7 +87,7 @@ export default function Interview({ lang, t }) {
               return (
                 <div 
                   key={index} 
-                  className={`accordion-item glass-card ${isOpen ? 'open' : ''}`}
+                  className={`accordion-item glass-card reveal-slide-up reveal-delay-${index + 1} ${isOpen ? 'open' : ''}`}
                 >
                   <button 
                     className="accordion-header"

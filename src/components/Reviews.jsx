@@ -93,7 +93,7 @@ export default function Reviews({ lang, t }) {
           <p className="section-subtitle">{t.reviews.subtitle}</p>
         </div>
 
-        <div className="reviews-carousel-wrapper">
+        <div className="reviews-carousel-wrapper reveal-slide-up">
           <button className="carousel-control prev" onClick={prevSlide} aria-label="Previous Review">
             <ChevronLeft size={24} />
           </button>

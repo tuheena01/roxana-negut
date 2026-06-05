@@ -24,7 +24,7 @@ export default function About({ t }) {
     <section id="about" className="section about-section">
       <div className="container">
         <div className="about-grid">
-          <div className="about-info">
+          <div className="about-info reveal">
             <div className="section-badge">
               <Feather size={14} />
               <span>Biography</span>
@@ -37,10 +37,10 @@ export default function About({ t }) {
           </div>
           
           <div className="about-awards">
-            <h3 className="awards-heading text-gradient-gold">{t.about.awards_title}</h3>
+            <h3 className="awards-heading text-gradient-gold reveal">{t.about.awards_title}</h3>
             <div className="awards-list">
               {awards.map((award, index) => (
-                <div key={index} className="award-card glass-card">
+                <div key={index} className={`award-card glass-card reveal-slide-up reveal-delay-${index + 1}`}>
                   <div className="award-icon-container">
                     {award.icon}
                   </div>

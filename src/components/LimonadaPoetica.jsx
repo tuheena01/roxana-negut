@@ -116,7 +116,7 @@ export default function LimonadaPoetica({ lang, t }) {
   return (
     <section id="limonada" className="section limonada-section">
       <div className="container">
-        <div className="limonada-wrapper glass-card">
+        <div className="limonada-wrapper glass-card reveal-slide-up">
           <div className="limonada-intro">
             <div className="section-badge">
               <Smile size={14} />
