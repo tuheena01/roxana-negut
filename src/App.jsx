@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -130,18 +130,43 @@ const translations = {
 };
 
 function App() {
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState(() => {
+    const saved = localStorage.getItem('roxana_lang');
+    return saved === 'ro' ? 'ro' : 'en';
+  });
+
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('roxana_theme');
+    if (saved) return saved;
+    // Check system preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light';
+    }
+    return 'dark';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('roxana_lang', lang);
+  }, [lang]);
+
+  useEffect(() => {
+    localStorage.setItem('roxana_theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   const t = translations[lang];
 
   return (
     <div className="app-wrapper">
-      <Header lang={lang} setLang={setLang} t={t} />
-      <Hero t={t} />
-      <About t={t} />
-      <Books lang={lang} t={t} />
-      <Reviews lang={lang} t={t} />
-      <Interview lang={lang} t={t} />
-      <LimonadaPoetica lang={lang} t={t} />
+      <Header lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
+      <main className="main-content-flow">
+        <Hero t={t} />
+        <About t={t} />
+        <Books lang={lang} t={t} />
+        <Reviews lang={lang} t={t} />
+        <Interview lang={lang} t={t} />
+        <LimonadaPoetica lang={lang} t={t} />
+      </main>
       <Footer lang={lang} t={t} />
     </div>
   );
