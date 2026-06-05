@@ -3,7 +3,9 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import FeaturedBook from './components/FeaturedBook';
 import About from './components/About';
+import Timeline from './components/Timeline';
 import Books from './components/Books';
+import Interview from './components/Interview';
 import Reviews from './components/Reviews';
 import MediaSection from './components/MediaSection';
 import Footer from './components/Footer';
@@ -63,6 +65,10 @@ const translations = {
       message: 'Message',
       send: 'Send Message',
       success: 'Thank you for your message! Roxana will get back to you soon.'
+    },
+    interview: {
+      title: 'Conversations & Reflections',
+      subtitle: 'An intimate Q&A session with Roxana about literature, philosophy, and the path of writing.'
     }
   },
   ro: {
@@ -118,6 +124,10 @@ const translations = {
       message: 'Mesaj',
       send: 'Trimite Mesajul',
       success: 'Vă mulțumim pentru mesaj! Roxana vă va răspunde în cel mai scurt timp.'
+    },
+    interview: {
+      title: 'Interviuri & Dialoguri',
+      subtitle: 'O sesiune intimă de întrebări și răspunsuri cu Roxana despre literatură, filosofie și calea scrisului.'
     }
   }
 };
@@ -171,8 +181,14 @@ function App() {
         
         <About t={t} />
         
+        {/* Literary Journey Timeline */}
+        <Timeline lang={lang} t={t} />
+        
         {/* Books grid */}
         <Books lang={lang} onOpenSample={handleOpenSample} t={t} />
+        
+        {/* Interview Q&A Session */}
+        <Interview lang={lang} t={t} />
         
         <Reviews lang={lang} t={t} />
         

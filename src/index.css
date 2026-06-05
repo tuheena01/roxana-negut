@@ -2209,3 +2209,251 @@ a {
     display: none;
   }
 }
+
+/* ================= LITERARY JOURNEY TIMELINE ================= */
+.timeline-section {
+  position: relative;
+  background: var(--gradient-dark);
+}
+
+.timeline-container {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+
+.timeline-nodes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.timeline-node-item {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0.5rem;
+  text-align: left;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.node-icon-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+  z-index: 2;
+}
+
+.node-year-label {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-left: 1.5rem;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+  letter-spacing: -0.02em;
+}
+
+/* Connective axis on nodes */
+.node-connector-line {
+  position: absolute;
+  left: 22px;
+  top: 46px;
+  width: 2px;
+  height: 100%;
+  background: var(--border-glow);
+  z-index: 1;
+}
+
+.timeline-node-item:last-child .node-connector-line {
+  display: none;
+}
+
+.timeline-node-item.active .node-icon-circle {
+  border-color: var(--accent-gold);
+  background: var(--gradient-primary);
+  color: #0c0b0a;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.45);
+}
+
+.timeline-node-item.active .node-year-label {
+  color: var(--accent-gold);
+  transform: translateX(5px);
+}
+
+.timeline-detail-display {
+  perspective: 1000px;
+}
+
+.timeline-detail-card {
+  padding: 3rem;
+  border-radius: 28px;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform-style: preserve-3d;
+  box-shadow: var(--glass-shadow);
+  border-color: var(--border-glow-hover);
+}
+
+.card-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.timeline-detail-year {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  line-height: 1;
+  opacity: 0.95;
+}
+
+.timeline-detail-dots {
+  color: var(--border-glow-hover);
+  letter-spacing: 0.15em;
+  font-size: 1.1rem;
+}
+
+.timeline-detail-title {
+  font-size: 1.85rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.timeline-detail-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.timeline-detail-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ================= LIMONADA FILTERS & COLORS ================= */
+.limonada-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 1.8rem 0;
+  width: 100%;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glow);
+  padding: 0.45rem 1.05rem;
+  border-radius: 30px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-gold);
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.12);
+  transform: translateY(-2px);
+}
+
+.pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: var(--transition-smooth);
+}
+
+/* Dynamic Liquid Colors */
+.glass-liquid.liquid-yellow { background: linear-gradient(180deg, rgba(241, 196, 15, 0.65) 0%, rgba(243, 156, 18, 0.85) 100%) !important; }
+.glass-liquid.liquid-blue { background: linear-gradient(180deg, rgba(52, 152, 219, 0.65) 0%, rgba(41, 128, 185, 0.85) 100%) !important; }
+.glass-liquid.liquid-amber { background: linear-gradient(180deg, rgba(230, 126, 34, 0.65) 0%, rgba(211, 84, 0, 0.85) 100%) !important; }
+.glass-liquid.liquid-green { background: linear-gradient(180deg, rgba(46, 204, 113, 0.65) 0%, rgba(39, 174, 96, 0.85) 100%) !important; }
+.glass-liquid.liquid-gold { background: linear-gradient(180deg, rgba(243, 229, 171, 0.65) 0%, rgba(212, 175, 55, 0.85) 100%) !important; }
+.glass-liquid.liquid-red { background: linear-gradient(180deg, rgba(231, 76, 60, 0.65) 0%, rgba(192, 57, 43, 0.85) 100%) !important; }
+.glass-liquid.liquid-pink { background: linear-gradient(180deg, rgba(253, 167, 223, 0.65) 0%, rgba(209, 34, 155, 0.85) 100%) !important; }
+
+/* Filter Dot Colors */
+.pill-dot.liquid-yellow { background: #f1c40f; }
+.pill-dot.liquid-blue { background: #3498db; }
+.pill-dot.liquid-amber { background: #e67e22; }
+.pill-dot.liquid-green { background: #2ecc71; }
+.pill-dot.liquid-gold { background: #d4af37; }
+.pill-dot.liquid-red { background: #e74c3c; }
+.pill-dot.liquid-pink { background: #fda7df; }
+
+/* Responsive tweaks for timeline */
+@media (max-width: 800px) {
+  .timeline-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .timeline-nodes-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 1rem 0;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+  .timeline-node-item {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    min-width: 90px;
+    text-align: center;
+  }
+  .node-year-label {
+    font-size: 1.4rem;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  .node-connector-line {
+    display: none;
+  }
+  .timeline-detail-card {
+    min-height: 250px;
+    padding: 2.2rem;
+  }
+}
+
