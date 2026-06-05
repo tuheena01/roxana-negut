@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Calendar, Award, BookOpen, Sparkles, Star, Milestone } from 'lucide-react';
 
-export default function Timeline({ lang, t }) {
+export default function Timeline({ lang }) {
   const [activeId, setActiveId] = useState(5); // Default to latest milestone (2023)
 
   const milestones = [

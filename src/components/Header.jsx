@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Globe, BookOpen, User, MessageSquare, HelpCircle, Smile, Heart, Menu, X, Sun, Moon } from 'lucide-react';
 
 export default function Header({ lang, setLang, theme, setTheme, t }) {
@@ -10,7 +10,7 @@ export default function Header({ lang, setLang, theme, setTheme, t }) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'about', 'books', 'interview', 'reviews', 'media', 'contact'];
+      const sections = ['home', 'about', 'books', 'interview', 'reviews', 'media', 'contact-form'];
       const current = sections.find(section => {
         const el = document.getElementById(section);
         if (el) {
@@ -33,7 +33,7 @@ export default function Header({ lang, setLang, theme, setTheme, t }) {
     { id: 'interview', label: lang === 'en' ? 'Q&A' : 'Interviu', icon: <HelpCircle size={16} /> },
     { id: 'reviews', label: t.nav.reviews, icon: <MessageSquare size={16} /> },
     { id: 'media', label: lang === 'en' ? 'Media' : 'Media', icon: <Smile size={16} /> },
-    { id: 'contact', label: lang === 'en' ? 'Contact' : 'Contact', icon: <Globe size={16} /> }
+    { id: 'contact-form', label: lang === 'en' ? 'Contact' : 'Contact', icon: <Globe size={16} /> }
   ];
 
   const handleLinkClick = (id) => {

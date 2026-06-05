@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { X, Sparkles } from 'lucide-react';
 
 export default function SampleModal({ isOpen, onClose, bookTitle, sampleText }) {

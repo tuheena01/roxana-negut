@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HelpCircle, ChevronDown, ChevronUp, Feather } from 'lucide-react';
 
 export default function Interview({ lang, t }) {

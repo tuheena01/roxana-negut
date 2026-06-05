@@ -1,5 +1,5 @@
-import React from 'react';
 import { ShoppingBag, BookOpen, Star, Sparkles } from 'lucide-react';
+import TiltCard from './TiltCard';
 
 export default function FeaturedBook({ lang, onOpenSample, t }) {
   
@@ -33,7 +33,8 @@ export default function FeaturedBook({ lang, onOpenSample, t }) {
           </div>
         </div>
 
-        <div className="featured-book-grid glass-card reveal-slide-up">
+        <TiltCard intensity={6} scale={1.015} glareOpacity={0.12} className="featured-book-tilt reveal-slide-up">
+          <div className="featured-book-grid glass-card">
           
           {/* Cover Section (Custom Matte Black & Gold Design) */}
           <div className="featured-cover-wrapper">
@@ -90,7 +91,8 @@ export default function FeaturedBook({ lang, onOpenSample, t }) {
             </div>
           </div>
 
-        </div>
+          </div>
+        </TiltCard>
 
       </div>
     </section>

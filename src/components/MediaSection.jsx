@@ -1,4 +1,3 @@
-import React from 'react';
 import LimonadaPoetica from './LimonadaPoetica';
 import InstagramFeed from './InstagramFeed';
 

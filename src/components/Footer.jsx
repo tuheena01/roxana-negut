@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Send, Heart, Camera } from 'lucide-react';
 
 export default function Footer({ lang, t }) {

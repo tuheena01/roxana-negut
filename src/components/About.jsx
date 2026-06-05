@@ -1,4 +1,3 @@
-import React from 'react';
 import { Award, Sparkles, Feather, Shield } from 'lucide-react';
 
 export default function About({ t }) {

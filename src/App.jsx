@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import FeaturedBook from './components/FeaturedBook';
 import About from './components/About';
-import Timeline from './components/Timeline';
+import StatsBar from './components/StatsBar';
 import Books from './components/Books';
 import Interview from './components/Interview';
 import Reviews from './components/Reviews';
 import MediaSection from './components/MediaSection';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SampleModal from './components/SampleModal';
+import BackToTop from './components/BackToTop';
+import ScrollProgressBar from './components/ScrollProgressBar';
+import CursorGlow from './components/CursorGlow';
 
 const translations = {
   en: {
@@ -92,9 +96,9 @@ const translations = {
       bio_1: 'Roxana Neguț (născută în 1981 la București) este o poetă, scriitoare de literatură pentru copii și jurnalistă română. Având studii de Filosofie și Jurnalism, și-a petrecut decenii îmbinând profunzimea filosofică cu grația literară.',
       bio_2: 'Portofoliul ei literar acoperă mai multe genuri – de la poezie spirituală profundă și proză scurtă până la basme fermecătoare pentru copii. Pe lângă volumele sale independente, creațiile sale au fost incluse în numeroase antologii naționale și internaționale de prestigiu din SUA, Marea Britanie, India și Argentina.',
       awards_title: 'Recunoaștere și Distincții',
-      award_1: 'Desemnată Ambasador Literar în România pentru Fundația Cesar Egido Serrano (Spania) în 2018, și „Ambasador al Cuvântului” în 2019 și 2020.',
-      award_2: 'Câștigătoare a „Iconic Author Award 2023” acordat de Maybeify Publisher (India) pentru volumul de poezii „The Woman, The Old Woman, The Child”.',
-      award_3: 'Distinsă cu „Premiul Prieteniei” în 2020 pentru poveștile sale.'
+      award_1: 'Desemnată Ambasador Literar în România pentru Fundația Cesar Egido Serrano (Spania) în 2018, și „Ambasador al Cuvântului" în 2019 și 2020.',
+      award_2: 'Câștigătoare a „Iconic Author Award 2023" acordat de Maybeify Publisher (India) pentru volumul de poezii „The Woman, The Old Woman, The Child".',
+      award_3: 'Distinsă cu „Premiul Prieteniei" în 2020 pentru poveștile sale.'
     },
     books: {
       title: 'Volume Publicate',
@@ -113,7 +117,7 @@ const translations = {
     },
     limonada: {
       title: 'Limonada Poetică',
-      subtitle: 'Inspirat de blogul ei „Viața ca o limonadă”.',
+      subtitle: 'Inspirat de blogul ei „Viața ca o limonadă".',
       btn: 'Stoarce o Lămâie Poetică',
       instructions: 'Apasă butonul de mai jos pentru a obține un gând poetic sau un vers scris de Roxana.'
     },
@@ -138,13 +142,11 @@ function App() {
     return saved === 'ro' ? 'ro' : 'en';
   });
 
-  // Default theme is now dark (premium matte black and gold)
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('roxana_theme');
     return saved ? saved : 'dark';
   });
 
-  // Sample Modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
   const [modalText, setModalText] = useState('');
@@ -158,7 +160,7 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  // Scroll Reveal Intersection Observer
+  // Enhanced Scroll Reveal with multiple classes
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -174,11 +176,19 @@ function App() {
       }
     );
 
-    const revealElements = document.querySelectorAll('.reveal, .reveal-slide-up, .reveal-fade-in');
-    revealElements.forEach((el) => observer.observe(el));
+    const selectors = [
+      '.reveal',
+      '.reveal-slide-up',
+      '.reveal-fade-in',
+      '.reveal-slide-left',
+      '.reveal-slide-right',
+      '.reveal-scale'
+    ];
+    const elements = document.querySelectorAll(selectors.join(', '));
+    elements.forEach((el) => observer.observe(el));
 
     return () => {
-      revealElements.forEach((el) => observer.disconnect());
+      observer.disconnect();
     };
   }, [lang]);
 
@@ -196,17 +206,20 @@ function App() {
 
   return (
     <div className="app-wrapper">
+      <ScrollProgressBar />
+      <CursorGlow />
       <Header lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
       <main className="main-content-flow">
-        <Hero t={t} />
+        <Hero t={t} lang={lang} />
         
+        {/* Stats bar after hero */}
+        <StatsBar lang={lang} />
+
         {/* Featured Book Showcase */}
         <FeaturedBook lang={lang} onOpenSample={handleOpenSample} t={t} />
         
         <About t={t} />
         
-        {/* Literary Journey Timeline */}
-        <Timeline lang={lang} t={t} />
         
         {/* Books grid */}
         <Books lang={lang} onOpenSample={handleOpenSample} t={t} />
@@ -218,9 +231,15 @@ function App() {
         
         {/* Media & Interactive Section (Limonada + Instagram) */}
         <MediaSection lang={lang} t={t} />
+
+        {/* Contact Form */}
+        <Contact lang={lang} t={t} />
       </main>
       
       <Footer lang={lang} t={t} />
+      
+      {/* Back To Top */}
+      <BackToTop />
       
       {/* Excerpt Modal overlay */}
       <SampleModal 

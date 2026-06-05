@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Smile, Sparkles } from 'lucide-react';
 
 export default function LimonadaPoetica({ lang, t }) {

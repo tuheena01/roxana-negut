@@ -1,4 +1,3 @@
-import React from 'react';
 import { Camera, Heart, MessageCircle, ArrowRight } from 'lucide-react';
 
 export default function InstagramFeed({ lang }) {
