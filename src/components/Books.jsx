@@ -56,7 +56,7 @@ export default function Books({ lang, onOpenSample, t }) {
       id: 'teoria-haosului',
       title: { en: 'Teoria Haosului (Chaos Theory)', ro: 'Teoria Haosului' },
       genre: { en: 'Contemporary Poetry', ro: 'Poezie Contemporană' },
-      publisher: 'Editura Lumen',
+      publisher: lang === 'en' ? 'UP Publishing' : 'Editura UP',
       year: '2022',
       readTime: { en: '~5 min read', ro: '~5 min citire' },
       description: {

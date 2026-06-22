@@ -86,8 +86,8 @@ export default function Timeline({ lang }) {
         ro: 'Poezia Creației'
       },
       description: {
-        en: "Released her poetry volume 'Teoria Haosului' (Chaos Theory), exploring emotional landscapes, human connection, and representing chaos as the primary engine of creation.",
-        ro: 'A lansat volumul de poezie „Teoria Haosului”, explorând peisaje emoționale, conexiunile dintre oameni și conceptualizând haosul drept forța primară a creației.'
+        en: "Released the first edition of her poetry volume 'Teoria Haosului' (Chaos Theory) through Up Publishing House, exploring emotional landscapes, human connection, and representing chaos as the primary engine of creation.",
+        ro: 'A lansat prima ediție a volumului de poezie „Teoria Haosului” la Editura UP, explorând peisaje emoționale, conexiunile dintre oameni și conceptualizând haosul drept forța primară a creației.'
       }
     },
     {
